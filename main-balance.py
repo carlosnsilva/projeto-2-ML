@@ -21,9 +21,9 @@ X = dataset.loc[:,index_inicial:index_final-1]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=None, stratify=y) # 80% treino e 20% teste
 
 # KNN
-KNN_Generator(X_train, X_test, y_train, y_test, "euclidean")
-KNN_Generator(X_train, X_test, y_train, y_test, "manhattan")
-KNN_Generator(X_train, X_test, y_train, y_test, "minkowski")
+KNN_Generator(X_train, X_test, y_train, y_test, "euclidean", "balance-scale")
+KNN_Generator(X_train, X_test, y_train, y_test, "manhattan", "balance-scale")
+KNN_Generator(X_train, X_test, y_train, y_test, "minkowski", "balance-scale")
 
 TreeEntropy(X_train, X_test, y_train, y_test,"balance-scale")
 TreeGini(X_train, X_test, y_train, y_test, "balance-scale")

@@ -3,8 +3,8 @@ from sklearn import metrics
 import pandas as pds
 from sklearn.neighbors import KNeighborsClassifier
 
-def KNN_Generator(X_train, X_test, y_train, y_test, metrica):
-        k = [4,6,8,10,12] 
+def KNN_Generator(X_train, X_test, y_train, y_test, metrica, base):
+        k = [5,10] 
 
         for i in k:
 
@@ -16,6 +16,6 @@ def KNN_Generator(X_train, X_test, y_train, y_test, metrica):
             acc = metrics.accuracy_score(result, y_test)
 
             show = round(acc * 100)
-            print("Resultado para a base wine com a metrica {} e k = {}: {}%\n".format(metrica,i,show))
+            print("Resultado para a base {} com a metrica {} e k = {}: {}%\n".format(base,metrica,i,show))
         
         return
