@@ -36,5 +36,8 @@ TreeGini(X_train, X_test, y_train, y_test, "balance-scale")
 algorithmKMeans(X_train, X_test, y_train, y_test,"balance-scale")
 
 # MLP
-algorithmMLP(X_train, X_test, y_train, y_test,"balance-scale","tanh")
-algorithmMLP(X_train, X_test, y_train, y_test,"balance-scale","logistic")
+algorithmMLP(X_train, X_test, y_train, y_test,"balance-scale","tanh",(6,4,2))
+algorithmMLP(X_train, X_test, y_train, y_test,"balance-scale","tanh",(5,3))
+
+algorithmMLP(X_train, X_test, y_train, y_test,"balance-scale","logistic",(6,4,2))
+algorithmMLP(X_train, X_test, y_train, y_test,"balance-scale","logistic",(5,3))

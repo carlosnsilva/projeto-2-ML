@@ -36,5 +36,8 @@ TreeGini(X_train, X_test, y_train, y_test, "wine")
 algorithmKMeans(X_train, X_test, y_train, y_test,"wine")
 
 # MLP
-algorithmMLP(X_train, X_test, y_train, y_test,"wine","tanh")
-algorithmMLP(X_train, X_test, y_train, y_test,"wine","logistic")
+algorithmMLP(X_train, X_test, y_train, y_test,"wine","tanh",(6,4,2))
+algorithmMLP(X_train, X_test, y_train, y_test,"wine","tanh",(5,3))
+
+algorithmMLP(X_train, X_test, y_train, y_test,"wine","logistic",(6,4,2))
+algorithmMLP(X_train, X_test, y_train, y_test,"wine","logistic",(5,3))
