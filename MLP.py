@@ -4,7 +4,9 @@ import pandas as pd
 from sklearn.neural_network import MLPClassifier
 
 def algorithmMLP(X_train, X_test, y_train, y_test, base, arch):
-    model = MLPClassifier(hidden_layer_sizes=(6,4,2), activation=arch, max_iter=3000)
+    print("MLP:")
+    
+    model = MLPClassifier(hidden_layer_sizes=(4,2), activation=arch, max_iter=3000)
     model = model.fit(X_train, y_train)
 
     result = model.predict(X_test)
@@ -12,7 +14,7 @@ def algorithmMLP(X_train, X_test, y_train, y_test, base, arch):
     acc = metrics.accuracy_score(result, y_test)
 
     show = round(acc * 100)
-    print("Resultado para a base {}, utilizando a arquitetura {} foi de : {}%\n".format(base,arch,show))
+    print("Resultado para a base {}, utilizando a arquitetura {} foi de: {}%\n".format(base,arch,show))
 
     classes = model.classes_
     camadas = model.n_layers_

@@ -20,6 +20,5 @@ X.head(5)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=None, stratify=y) # 80% treino e 20% teste
 
 # MLP
-
-algorithmMLP(X_train, X_test, y_train, y_test,"wine","tanh")
-algorithmMLP(X_train, X_test, y_train, y_test,"wine","logistic")
+algorithmMLP(X_train, X_test, y_train, y_test,"balance","tanh")
+algorithmMLP(X_train, X_test, y_train, y_test,"balance","logistic")

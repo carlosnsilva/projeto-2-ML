@@ -6,6 +6,7 @@ from KNN import KNN_Generator
 from decisionTreeEntropy import TreeEntropy
 from decisionTreeGini import TreeGini
 from MLP import algorithmMLP
+from KMeans import algorithmKMeans
 
 base = "./bases/wine.data"
 
@@ -17,15 +18,23 @@ index_final = len(dataset.columns)
 
 y = dataset[index_Y] # extrai a primeira coluna, que é o label
 X = dataset.loc[:,index_inicial:index_final-1]
+X.head(5)
 
 # 20% teste e 80% treinamento
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=None, stratify=y) # 80% treino e 20% teste
 
 # KNN
-KNN_Generator(X_train, X_test, y_train, y_test, "euclidean")
-KNN_Generator(X_train, X_test, y_train, y_test, "manhattan")
-KNN_Generator(X_train, X_test, y_train, y_test, "minkowski")
+KNN_Generator(X_train, X_test, y_train, y_test, "euclidean", "wine")
+KNN_Generator(X_train, X_test, y_train, y_test, "manhattan", "wine")
+KNN_Generator(X_train, X_test, y_train, y_test, "minkowski", "wine")
 
+# Árvore
 TreeEntropy(X_train, X_test, y_train, y_test,"wine")
 TreeGini(X_train, X_test, y_train, y_test, "wine")
 
+#K-Means
+algorithmKMeans(X_train, X_test, y_train, y_test,"wine")
+
+# MLP
+algorithmMLP(X_train, X_test, y_train, y_test,"wine","tanh")
+algorithmMLP(X_train, X_test, y_train, y_test,"wine","logistic")

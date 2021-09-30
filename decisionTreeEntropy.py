@@ -16,6 +16,6 @@ def TreeEntropy(X_train, X_test, y_train, y_test, base):
 
     final = round(result_final * 100)
     
-    print("Resultado na base {} no criterio entropy: {}%\n".format(base,final))
+    print("Resultado da árvore de decisão na base {} com criterio entropy: {}%\n".format(base,final))
     
     return 

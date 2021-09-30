@@ -16,6 +16,6 @@ def KNN_Generator(X_train, X_test, y_train, y_test, metrica, base):
             acc = metrics.accuracy_score(result, y_test)
 
             show = round(acc * 100)
-            print("Resultado para a base {} com a metrica {} e k = {}: {}%\n".format(base,metrica,i,show))
+            print("Resultado do Algoritmo KNN para a base {} com a metrica {} e k = {}: {}%\n".format(base,metrica,i,show))
         
         return

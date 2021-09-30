@@ -15,7 +15,7 @@ def TreeGini(X_train, X_test, y_train, y_test, base):
 
     final = round(result_final * 100)
 
-    print("Resultado na base {} com o criterio gini {}% \n".format(base,final))
+    print("Resultado da árvore de decisão {} com o criterio gini {}% \n".format(base,final))
 
     
     return
