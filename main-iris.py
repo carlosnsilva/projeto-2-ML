@@ -5,8 +5,8 @@ from sklearn.neighbors import KNeighborsClassifier
 from KNN import KNN_Generator
 from decisionTreeEntropy import TreeEntropy
 from decisionTreeGini import TreeGini
-from MLP import algorithmMLP
 from KMeans import algorithmKMeans
+from MLP import algorithmMLP
 
 base = "./bases/iris.data"
 
@@ -16,9 +16,9 @@ index_Y = 0
 index_inicial = 1
 index_final = len(dataset.columns)
 
-y = dataset[index_Y] # extrai a primeira coluna, que é o label
-X = dataset.loc[:,index_inicial:index_final-1]
-#X.head(5)
+y =  dataset.loc[:, index_final-1] # extrai a primeira coluna, que é o label
+X = dataset.loc[:,index_Y:index_final-2]
+X.head(5)
 
 # 20% teste e 80% treinamento
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=None, stratify=y) # 80% treino e 20% teste
@@ -28,7 +28,7 @@ KNN_Generator(X_train, X_test, y_train, y_test, "euclidean", "iris")
 KNN_Generator(X_train, X_test, y_train, y_test, "manhattan", "iris")
 KNN_Generator(X_train, X_test, y_train, y_test, "minkowski", "iris")
 
-# Árvore
+#Árvore
 TreeEntropy(X_train, X_test, y_train, y_test,"iris")
 TreeGini(X_train, X_test, y_train, y_test, "iris")
 
