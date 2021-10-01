@@ -11,7 +11,7 @@ def algorithmKMeans(X_train, X_test, y_train, y_test,base):
     model = KMeans(n_clusters = clusters)
     model = model.fit(X_train)
 
-    # Pegar os labels dos padrões de Treinamento
+    
     labels = model.labels_
 
     map_labels = []
@@ -26,14 +26,12 @@ def algorithmKMeans(X_train, X_test, y_train, y_test,base):
             if labels[i] == c:
                 map_labels[c].append(new_y_train[i])
 
-    #print(map_labels)
-
-    # Criar dicionário com os labells a serem mapeados
+    
     mapping = {}
 
     for i in range(clusters):
-        final = Counter(map_labels[i]) # contar a classe que mais aparece
-        value = final.most_common(1)[0][0] # retorna a classe com maior frequência
+        final = Counter(map_labels[i]) 
+        value = final.most_common(1)[0][0] 
         mapping[i] = value
 
 
